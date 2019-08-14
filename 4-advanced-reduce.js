@@ -6,14 +6,15 @@ var output = fs.readFileSync('4-advanced-reduce.txt', 'utf8')
     .trim()
     .split('\n')
     .map(line => line.split('  '))
-    .reduce( (customers, line ) => {
-        customers[line[0]] = []
-        customers[line[0]].push({
-            name: line[1],
-            price: line[2],
-            quantity: line[3]
+    .reduce( (result, item ) => {
+        let name = item[0]
+        result[name] = result[name] || [] // If already defined
+        result[name].push({
+            name: item[1],
+            price: item[2],
+            quantity: item[3]
         })
-        return customers
+        return result
     }, {})
 
 
