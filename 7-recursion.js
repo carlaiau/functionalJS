@@ -10,9 +10,7 @@ let categories = [
 ]
 
 
-let makeTree = ({
-    categories,
-    parent = null}) => {
+let makeTree = ( { categories, parent = null } ) => {
     let node = {}
     categories
         .filter(c => c.parent === parent)
@@ -22,7 +20,7 @@ let makeTree = ({
         }))
     return node
 }
-
+ 
 console.log(
     JSON.stringify(
         makeTree({categories}),
