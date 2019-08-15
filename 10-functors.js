@@ -3,6 +3,11 @@
 // the function and then creates a data structure to join the outputs of 
 // all the function  calls. Map, and filter are both functors
 
+// Technically this definition is wrong. The thing that is actually the functor
+// is the object that implements the map method. Therefore in JS's case,
+// the functor is actually Array.
+// Described here: https://www.youtube.com/watch?v=DisD9ftUyCk
+
 // This will allow us to add a string like "ABC" and convert it to "BCD"
 // or "DEF" and convert it to "CDE"
 stringFunctor = (value, fn) => 
